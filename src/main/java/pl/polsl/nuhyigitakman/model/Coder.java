@@ -64,7 +64,6 @@ public class Coder {
             cursor += 2;
         }
 
-        //stream olarak dene
         pairsOfEncryptedText.stream().forEach(s -> {
             int column_a = 0;
             int row_a = 0;

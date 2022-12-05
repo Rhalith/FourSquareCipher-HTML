@@ -1,32 +1,40 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>"Four Square Cipher" - Nuh Yigit Akman</title>
+    <script>
+    function manualChoice() {
+        document.getElementById("manualP").style.display = "inline";
+        document.getElementById("keyOne").required = true;
+        document.getElementById("keyTwo").required = true;
+    }
+    function randomChoice() {
+        document.getElementById("manualP").style.display = "none";
+        document.getElementById("keyOne").required = false;
+        document.getElementById("keyTwo").required = false;
+    }
+    </script>
 </head>
 <body>
 <h1>Four-Square Cipher</h1>
 
-<form action="Forward">
-    <p><input type=radio name=data>Encryption</p>
-    <p><input type=radio name=data>Decryption</p>
-</form>
-<hr>
-<hr>
-<form action="Forward">
-    <p><input type=radio name=data>Manual</p>
-    <p><input type=radio name=data>Random</p>
-</form>
-<hr>
-<hr>
-<form action="Form" method="GET">
-    <p>Key One:<input type=text size=20 name=keyOne placeholder="If random, leave it empty"></p>
-    <p>Key Two:<input type=text size=20 name=keyTwo placeholder="If random, leave it empty"></p>
-</form>
-<hr>
-<hr>
-<form action="First" method="GET">
-    <p>Text:<input type=text size=20 name=text placeholder="Enter your text"></p>
-    <input type="submit" value="run First" />
+<form action="Choice" method="GET">
+    <p><input type=radio name=encryption value=encrypt checked>Encryption</p>
+    <p><input type=radio name=encryption value=decrypt>Decryption</p>
+    <hr>
+    <hr>
+    <p id="manualP1"><input type=radio name=userchoice onclick="manualChoice()" value=manual checked>Manual</p>
+    <p id="manualP2"><input type=radio name=userchoice onclick="randomChoice()" value=random>Random</p>
+    <div id="manualP"><hr>
+        <hr>
+    <p>Key One:<input id="keyOne" type=text size=20 name=keyOne></p>
+    <p>Key Two:<input id="keyTwo" type=text size=20 name=keyTwo></p>
+        <hr>
+        <hr>
+    </div>
+    <p>Text:<input type=text size=20 name=userText placeholder="Enter your text" required></p>
+    <input type="submit" value="run Choice" />
 </form>
 <hr>
 </body>
