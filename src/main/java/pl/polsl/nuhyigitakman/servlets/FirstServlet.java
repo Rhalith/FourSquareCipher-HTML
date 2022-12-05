@@ -1,7 +1,6 @@
 package pl.polsl.nuhyigitakman.servlets;
 
 import java.io.*;
-import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -25,7 +24,7 @@ public class FirstServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         response.setContentType("text/plain; charset=ISO-8859-2");

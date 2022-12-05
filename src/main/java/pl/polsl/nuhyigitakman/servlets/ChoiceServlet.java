@@ -4,7 +4,6 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Locale;
 
 import pl.polsl.nuhyigitakman.model.*;
@@ -12,7 +11,7 @@ import pl.polsl.nuhyigitakman.model.*;
 @WebServlet("/Choice")
 public class ChoiceServlet extends HttpServlet {
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         Matrices matrices = new Matrices();
         Coder coder = new Coder();
