@@ -4,6 +4,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>"Four Square Cipher" - Nuh Yigit Akman</title>
     <script>
+    function encryptChoice(){
+        document.getElementById("submitButton").value = "Encrypt your Text";
+    }
+    function decryptChoice(){
+        document.getElementById("submitButton").value = "Decrypt your Text";
+    }
     function manualChoice() {
         document.getElementById("manualP").style.display = "inline";
         document.getElementById("keyOne").required = true;
@@ -19,9 +25,9 @@
 <body>
 <h1>Four-Square Cipher</h1>
 
-<form action="Choice" method="GET">
-    <p><input type=radio name=encryption value=encrypt checked>Encryption</p>
-    <p><input type=radio name=encryption value=decrypt>Decryption</p>
+<form action="Choice" method="POST">
+    <p><input type=radio name=encryption onclick="encryptChoice()" value=encrypt checked>Encryption</p>
+    <p><input type=radio name=encryption onclick="decryptChoice()" value=decrypt>Decryption</p>
     <hr>
     <hr>
     <p id="manualP1"><input type=radio name=userchoice onclick="manualChoice()" value=manual checked>Manual</p>
@@ -34,7 +40,7 @@
         <hr>
     </div>
     <p>Text:<input type=text size=20 name=userText placeholder="Enter your text" required></p>
-    <input type="submit" value="run Choice" />
+    <input id="submitButton" type="submit" value="Encrypt your text" />
 </form>
 <hr>
 </body>

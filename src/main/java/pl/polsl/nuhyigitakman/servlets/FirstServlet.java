@@ -28,12 +28,11 @@ public class FirstServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        response.setContentType("text/html; charset=ISO-8859-2");
+        response.setContentType("text/plain; charset=ISO-8859-2");
         PrintWriter out = response.getWriter();
-        response.setHeader("Refresh", "1");
-        String date = new Date().toString();
-
-        out.println("<html>\n<body>\n" + date + "\n<h1>It will be done in final!</h1><br>\n"
-                + "I was not have time to finish communicate between model and html");
+        out.println(request.getAttribute("output"));
+        out.println(request.getAttribute("plotOne"));
+        out.println(request.getAttribute("plotTwo"));
+        out.println(request.getAttribute("plotThree"));
     }
 }
