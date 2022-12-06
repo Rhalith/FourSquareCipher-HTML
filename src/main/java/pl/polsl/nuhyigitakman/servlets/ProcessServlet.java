@@ -1,6 +1,7 @@
 package pl.polsl.nuhyigitakman.servlets;
 
 import java.io.*;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -12,8 +13,8 @@ import javax.servlet.http.*;
  * @author Gall Anonim
  * @version 1.0
  */
-@WebServlet("/First")
-public class FirstServlet extends HttpServlet {
+@WebServlet("/Process")
+public class ProcessServlet extends HttpServlet {
 
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -28,10 +29,19 @@ public class FirstServlet extends HttpServlet {
             throws ServletException, IOException {
 
         response.setContentType("text/plain; charset=ISO-8859-2");
-        PrintWriter out = response.getWriter();
-        out.println(request.getAttribute("output"));
-        out.println(request.getAttribute("plotOne"));
-        out.println(request.getAttribute("plotTwo"));
-        out.println(request.getAttribute("plotThree"));
+
+        HttpSession session = request.getSession(true);
+
+
+        session.setAttribute("userChoice",request.getAttribute("userChoice"));
+        session.setAttribute("userInput", request.getAttribute("userInput"));
+        session.setAttribute("output", request.getAttribute("output"));
+        session.setAttribute("keyOne", request.getAttribute("keyOne"));
+        session.setAttribute("keyTwo", request.getAttribute("keyTwo"));
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/History");
+
+        requestDispatcher.forward(request, response);
+
+
     }
 }

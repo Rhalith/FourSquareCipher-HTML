@@ -189,5 +189,20 @@ public class Matrices {
 
         return chars;
     }
+    /**
+     * Get matrices for key history
+     * @param choice chocie of key one or two
+     * @return chosen key
+     */
+    public String getMatrices(String choice){
+        String output;
+        if(choice.equals("one")){
+            output = getPlotTwo().toString().substring(1, 3 * getPlotTwo().size() - 1).replaceAll(", ", "");
+
+        } else {
+            output = getPlotThree().toString().substring(1, 3 * getPlotThree().size() - 1).replaceAll(", ", "");
+        }
+        return output;
+    }
 
 }
