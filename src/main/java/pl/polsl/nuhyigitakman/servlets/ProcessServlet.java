@@ -28,6 +28,7 @@ public class ProcessServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+
         response.setContentType("text/plain; charset=ISO-8859-2");
 
         HttpSession session = request.getSession(true);

@@ -26,7 +26,6 @@ public class HistoryServlet extends HttpServlet {
             String userInput = (String)session.getAttribute("userInput");
             String output = (String)session.getAttribute("output");
 
-
             Date date = new Date();
 
             History history = new History(userChoice, keyOne,keyTwo,userInput,output,date);
@@ -41,6 +40,7 @@ public class HistoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()){
+
             if(histories.size()>0){
                 for (History history : histories) {
                     out.println("Encryption/Decryption: " + history.getUserChoice());
