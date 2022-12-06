@@ -17,7 +17,7 @@ import javax.servlet.http.*;
 public class ProcessServlet extends HttpServlet {
 
     /**
-     * Handles the HTTP <code>GET</code> method.
+     * Handles the HTTP <code>POST</code> method.
      *
      * @param request servlet request
      * @param response servlet response

@@ -11,6 +11,14 @@ import pl.polsl.nuhyigitakman.model.*;
 @WebServlet("/Choice")
 public class ChoiceServlet extends HttpServlet {
 
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Matrices matrices = new Matrices();
@@ -59,6 +67,18 @@ public class ChoiceServlet extends HttpServlet {
 
     }
 
+    /**
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     * @param matrices matrices class for encrypt/decrypt
+     * @param coder coder class for encrypt/decrypt
+     * @param cookies cookies for errors
+     * @param encryptionChoice choice of encryption or decryption
+     * @param userText user's input text
+     */
     private void processRequest(HttpServletRequest request, HttpServletResponse response, Matrices matrices, Coder coder, Cookie[] cookies, String encryptionChoice, String userText) throws ServletException, IOException {
         String output;
         if(encryptionChoice.equals("encrypt")){
