@@ -45,6 +45,7 @@ public class History {
      * @param keyTwoInput user key two for four-square cipher
      * @param userText    user input text for encryption/decryption
      * @param output      text result of encryption/decryption
+     * @param date        date of encryption/decryption
      */
     public History(String userChoice, String keyOneInput, String keyTwoInput, String userText, String output, Date date) {
         this.userChoice = userChoice;
