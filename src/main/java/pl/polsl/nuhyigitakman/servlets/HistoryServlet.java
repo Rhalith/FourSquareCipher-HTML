@@ -11,6 +11,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ *
+ * History class of the servlet that process the choice of user and add to history.
+ *
+ * @author Nuh Yigit Akman
+ *
+ * @version 1.2
+ */
 @WebServlet("/History")
 public class HistoryServlet extends HttpServlet {
     /**

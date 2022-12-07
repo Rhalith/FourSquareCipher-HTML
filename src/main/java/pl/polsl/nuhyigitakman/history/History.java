@@ -3,6 +3,8 @@ package pl.polsl.nuhyigitakman.history;
 import java.util.Date;
 
 /**
+ * Class of history data
+ *
  * @author Nuh Yigit Akman
  * @version 1.2
  */

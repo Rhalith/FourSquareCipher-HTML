@@ -9,9 +9,11 @@ import java.util.List;
 
 /**
  *
+ * Matrices class for four-square cipher
+ *
  * @author Nuh Yigit Akman
  *
- * @version 1.1
+ * @version 1.2
  */
 public class Matrices {
 

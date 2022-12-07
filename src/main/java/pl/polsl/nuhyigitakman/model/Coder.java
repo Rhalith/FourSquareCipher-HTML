@@ -8,9 +8,11 @@ import static java.util.stream.Collectors.counting;
 
 /**
  *
+ * Coder class four-square cipher
+ *
  * @author Nuh Yigit Akman
  *
- * @version 1.1
+ * @version 1.2
  */
 public class Coder {
     /**

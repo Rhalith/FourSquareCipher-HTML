@@ -8,6 +8,14 @@ import java.util.Locale;
 
 import pl.polsl.nuhyigitakman.model.*;
 
+/**
+ *
+ * Main class of the servlet that demonstrate choice of user.
+ *
+ * @author Nuh Yigit Akman
+ *
+ * @version 1.2
+ */
 @WebServlet("/Choice")
 public class ChoiceServlet extends HttpServlet {
 
