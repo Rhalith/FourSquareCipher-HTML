@@ -59,8 +59,19 @@ public class HistoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()){
-
             if(histories.size()>0){
+                Cookie[] cookies = request.getCookies();
+                String lastVisit = "never";
+                if (cookies != null) {
+                    for (Cookie cookie : cookies) {
+                        if (cookie.getName().equals("lastVisit")) {
+                            lastVisit = cookie.getValue();
+                            break;
+                        }
+                    }
+                }
+                Cookie cookie = new Cookie("lastVisit", new java.util.Date().toString());
+                response.addCookie(cookie);
                 for (History history : histories) {
                     out.println("Encryption/Decryption: " + history.getUserChoice());
                     out.println("Key One: " + history.getKeyOne());
@@ -70,9 +81,10 @@ public class HistoryServlet extends HttpServlet {
                     out.println("Operation time: " + history.getDate());
                     out.println("----------------------------------");
                 }
+                out.println("Your last visit to history page was: " + lastVisit);
             }
             else {
-                out.println("There is no performed action");
+                response.sendError(response.SC_NOT_FOUND, "There is no performed action yet!");
             }
 
         }

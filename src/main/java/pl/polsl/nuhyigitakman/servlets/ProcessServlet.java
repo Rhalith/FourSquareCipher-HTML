@@ -28,11 +28,9 @@ public class ProcessServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-
         response.setContentType("text/plain; charset=ISO-8859-2");
 
         HttpSession session = request.getSession(true);
-
 
         session.setAttribute("userChoice",request.getAttribute("userChoice"));
         session.setAttribute("userInput", request.getAttribute("userInput"));
@@ -42,7 +40,6 @@ public class ProcessServlet extends HttpServlet {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/History");
 
         requestDispatcher.forward(request, response);
-
 
     }
 }
